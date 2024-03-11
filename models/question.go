@@ -86,6 +86,7 @@ func UpdateQuestionFavourite(userId UserID, questionId QuestionID, favourite boo
 
 	return true, nil
 }
+
 func DeleteQuestion(userId UserID, questionId QuestionID) (bool, error) {
 	stmt := "DELETE from Questions where id = $1 and target_id =$2"
 	result, err := databases.DbPool.Exec(stmt, questionId, userId)

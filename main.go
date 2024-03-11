@@ -25,5 +25,9 @@ func main() {
 	e.PUT("/users/:user_id/questions/:question_id/fav", controllers.MakeFavourite)
 	e.DELETE("/users/:user_id/questions/:question_id", controllers.DeleteQuestion)
 
+	e.POST("/users/:user_id/posts", controllers.CreatePost)
+	e.PATCH("/users/:user_id/posts/:post_id", controllers.ModifyPosts)
+	e.DELETE("/users/:user_id/posts/:post_id", controllers.DeletePosts)
+
 	e.Logger.Fatal(e.Start(":8080"))
 }
